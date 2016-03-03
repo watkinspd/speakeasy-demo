@@ -50,7 +50,7 @@ function verifyToken(secret, token) {
 // var port = process.env.OPENSHIFT_NODEJS_PORT || 8081
 //    , ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 //app.listen(port, ip);
-var port = process.env.OPENSHIFT_NODEJS_PORT
-    , ip = process.env.OPENSHIFT_NODEJS_IP;
-app.listen(port, ip);
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
+app.listen(port, ip);
