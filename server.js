@@ -47,6 +47,10 @@ function verifyToken(secret, token) {
   return speakeasy.time.verify({secret: secret, encoding: 'base32', token: token})
 }
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8081
-    , ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+// var port = process.env.OPENSHIFT_NODEJS_PORT || 8081
+//    , ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+//app.listen(port, ip);
+var port = process.env.OPENSHIFT_NODEJS_PORT
+    , ip = process.env.OPENSHIFT_NODEJS_IP;
 app.listen(port, ip);
+
