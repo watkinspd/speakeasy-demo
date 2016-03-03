@@ -8,9 +8,11 @@ app.set('view engine', 'jade')
 
 app.get('/', function (req, res) {
   var locals = {}
-
+  var options = {}
+  options.length = 20
+  options.name = 'PeterApp'
   // Generate a secret
-  locals.secret = speakeasy.generateSecret({length: 20})
+  locals.secret = speakeasy.generateSecret(options)
 
   // Get QR code URL
   locals.qrPath = '/qrcode?qrurl=' + encodeURIComponent(locals.secret.otpauth_url);
