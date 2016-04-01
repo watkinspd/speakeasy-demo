@@ -1,2 +1,2 @@
-FROM docker.io/library/node:4.4
+FROM docker.io/library/node
 EXPOSE 8080
